@@ -1,22 +1,34 @@
 {% extends "base.html" %}
 
 {% block main %}
-<h1>タスク削除ページ</h1>
-<p>
-  <strong>タイトル:</strong>
-  {{task.title}}
-</p>
+<!-- Main block content starts here -->
+
+<h1>Task Deletion Page</h1>
+<!-- Heading for the task deletion page -->
 
 <p>
-  <strong>内容:</strong>
-  {{task.content}}
+  <strong>Title:</strong>
+  {{ task.title }}
 </p>
+<!-- Display task title -->
+
+<p>
+  <strong>Content:</strong>
+  {{ task.content }}
+</p>
+<!-- Display task content -->
+
 <form action="{% url 'tasks:delete' task.id %}" method="post">
+  <!-- Form to submit the deletion of the task with the corresponding task ID -->
   {% csrf_token %}
-  <input type="submit" value="削除">
+  <input type="submit" value="Delete">
+  <!-- Submit button to delete the task -->
 </form>
 
 <br>
 
-<a href="{% url 'tasks:index' %}">戻る</a>
+<a href="{% url 'tasks:index' %}">Back</a>
+<!-- Link to go back to the task list -->
+
+<!-- Main block content ends here -->
 {% endblock %}

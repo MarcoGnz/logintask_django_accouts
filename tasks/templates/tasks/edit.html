@@ -1,16 +1,26 @@
 {% extends "base.html" %}
 
 {% block main %}
-<h1>タスク編集ページ</h1>
+<!-- Main block content starts here -->
+
+<h1>Edit Task Page</h1>
+<!-- Heading for the task edit page -->
+
 <form action="{% url 'tasks:edit' task.id %}" method="post">
+  <!-- Form to edit a task with the corresponding task ID -->
   {% csrf_token %}
   {{ form.as_p }}
-  <input type="submit" value="更新する">
+  <!-- Display form fields as paragraphs -->
+  <input type="submit" value="Update">
+  <!-- Submit button to update the task -->
 </form>
 
 <br>
 
-<a href="{% url 'tasks:detail' task.id %}">詳細</a> |
-<a href="{% url 'tasks:index' %}">戻る</a>
+<a href="{% url 'tasks:detail' task.id %}">Details</a> |
+<!-- Link to view task details -->
+<a href="{% url 'tasks:index' %}">Back</a>
+<!-- Link to go back to the task list -->
 
+<!-- Main block content ends here -->
 {% endblock %}

@@ -1,16 +1,27 @@
 {% extends "base.html" %}
 
 {% block main %}
-<h1>タスク詳細ページ</h1>
-<p>
-  <strong>タイトル:</strong>
-  {{task.title}}
-</p>
+<!-- Main block content starts here -->
+
+<h1>Task Details Page</h1>
+<!-- Heading for the task details page -->
 
 <p>
-  <strong>内容:</strong>
-  {{task.content}}
+  <strong>Title:</strong>
+  {{ task.title }}
 </p>
-<a href="{% url 'tasks:index' %}">戻る</a> |
-<a href="{% url 'tasks:edit' task.id %}">編集</a>
+<!-- Display task title -->
+
+<p>
+  <strong>Content:</strong>
+  {{ task.content }}
+</p>
+<!-- Display task content -->
+
+<a href="{% url 'tasks:index' %}">Back</a> |
+<!-- Link to go back to the task list -->
+<a href="{% url 'tasks:edit' task.id %}">Edit</a>
+<!-- Link to edit the task -->
+
+<!-- Main block content ends here -->
 {% endblock %}

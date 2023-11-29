@@ -5,19 +5,24 @@
   <head>
     <meta charset="utf-8">
     <title>Task</title>
+    <!-- Title for the task application -->
     <link rel="stylesheet" href="{% static 'tasks/css/normalize.css' %}">
+    <!-- Link to normalize.css stylesheet -->
     <link rel="stylesheet" href="{% static 'tasks/css/style.css' %}">
+    <!-- Link to style.css stylesheet -->
   </head>
 
   <body>
     <nav>
       <ul>
-        <li><a href="{% url 'tasks:index' %}">タスク一覧</a></li>
+        <li><a href="{% url 'tasks:index' %}">Task List</a></li>
+        <!-- Link to the task list page -->
       </ul>
     </nav>
     <main>
       <div>
         {% block main %}
+        <!-- Main content block that will be overridden in child templates -->
         {% endblock %}
       </div>
     </main>
