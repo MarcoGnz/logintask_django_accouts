@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block main %}
+  <div class="login-container">
+    <div class="login-header">
+      <h1>Welcome Back!</h1>
+    </div>
+
+    <form method="post" class="login-form">
+      {% csrf_token %}
+      <div class="form-field">
+        {{ form.username.label_tag }} {{ form.username }}
+      </div>
+      <div class="form-field">
+        {{ form.password.label_tag }} {{ form.password }}
+      </div>
+      <input type="hidden" name="next" value="{{ next }}" />
+      <button type="submit" class="login-btn">Log In</button>
+    </form>
+  </div>
+{% endblock %}

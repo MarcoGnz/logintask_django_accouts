@@ -2,6 +2,15 @@ main {
   margin: 100px 50px;
 }
 
+body {
+  min-height: 100%;
+  font-family: 'Arial', sans-serif;
+  background-image: url('images/task-list-template.jpg'); /* Ruta a tu imagen de fondo */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 nav {
   top: 0;
   width: 100%;
@@ -49,4 +58,82 @@ footer {
   font-size: 12px;
   position: fixed;
   bottom: 0;
+}
+
+
+/* login css  */
+
+.login-container {
+  text-align: center;
+  background-color: rgba(21, 60, 77, 0.585);
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column; /* Cambia la dirección del flex a columna */
+  align-items: center; /* Alinea los elementos al centro del contenedor */
+  width: 300px;
+
+  color: white;
+}
+
+.login-header,
+.login-form {
+  width: 70%; /* Ajusta el ancho del encabezado y del formulario según tu diseño */
+  padding: 20px; /* Añade algún espaciado interno */
+  box-sizing: border-box; /* Garantiza que el relleno no afecte el ancho total */
+}
+
+.form-field {
+  margin-bottom: 15px; /* Espacio entre campos */
+}
+
+.login-btn {
+  width: 100%; /* Ajusta el ancho del botón según tu diseño */
+}
+
+/* Add this to your style.css or in the head section of your HTML */
+.password-change-container {
+  text-align: center;
+  background-color: rgba(21, 60, 77, 0.585);
+  border-radius: 10px;
+  padding: 20px;
+  margin: auto; /* Center the container horizontally */
+  width: 300px;
+
+  color: white;
+}
+
+.password-change-form {
+  margin-bottom: 15px;
+}
+
+.change-btn {
+  background-color: #4CAF50; /* Green background color */
+  color: white; /* White text color */
+  padding: 10px 15px; /* Padding around the button */
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Add a pointer cursor on hover */
+}
+
+.change-btn:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+.go-back-link {
+  color: #007BFF; /* Blue link color */
+  text-decoration: none; /* Remove underline */
+  display: inline-block; /* Display as a block element to add padding */
+  padding: 8px 16px; /* Add padding to the link */
+}
+
+.go-back-link:hover {
+  text-decoration: underline; /* Underline the link on hover */
+}
+
+.all-contanier {
+  background-color: rgba(230, 236, 239, 0.823);
+  padding: 20px; /* Añade algún espacio interno según tu diseño */
+  box-sizing: border-box; /* Garantiza que el relleno no afecte el ancho total */
+
 }

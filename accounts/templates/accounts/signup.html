@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block main %}
+<div class="All-contenedores">
+<h2>Registrar usuario</h2>
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <input type="submit" value="Inscripción">
+</form>
+</div>
+{% endblock %}

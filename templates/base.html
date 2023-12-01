@@ -3,26 +3,37 @@
 <html>
 
   <head>
+    <!-- Meta tags for character set and title -->
     <meta charset="utf-8">
-    <title>Task</title>
-    <!-- Title for the task application -->
+    <title>tasks</title>
+
+    <!-- Static files: CSS stylesheets -->
     <link rel="stylesheet" href="{% static 'tasks/css/normalize.css' %}">
-    <!-- Link to normalize.css stylesheet -->
     <link rel="stylesheet" href="{% static 'tasks/css/style.css' %}">
-    <!-- Link to style.css stylesheet -->
   </head>
 
   <body>
+    <!-- Navigation section -->
     <nav>
       <ul>
-        <li><a href="{% url 'tasks:index' %}">Task List</a></li>
-        <!-- Link to the task list page -->
+        {% if user.is_authenticated %}
+        <!-- Display links for authenticated users -->
+        <li><a href="{% url 'tasks:index' %}">Tasks List</a></li>
+        <li><a href="{% url 'logout' %}">Logout</a></li>
+        <li><a href="{% url 'user_detail' user.pk %}">Member Information</a></li>
+        {% else %}
+        <!-- Display links for non-authenticated users -->
+        <li><a href="{% url 'login' %}">Login</a></li>
+        <li><a href="{% url 'signup' %}">Sign Up</a></li>
+        {% endif %}
       </ul>
     </nav>
+
+    <!-- Main content section -->
     <main>
-      <div>
+      <div class="all-contanier">
+        <!-- Block for individual pages to override -->
         {% block main %}
-        <!-- Main content block that will be overridden in child templates -->
         {% endblock %}
       </div>
     </main>
